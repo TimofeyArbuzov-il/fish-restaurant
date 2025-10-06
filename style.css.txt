@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #081a38;
+  --text-light: #ffffff;
+  --accent: #ff7043;
+  --text-muted: #b8c0d6;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background-color: rgba(8, 26, 56, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--text-light);
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  text-align: center;
+  padding: 140px 20px;
+  background: linear-gradient(180deg, #0b1e43 0%, #091b39 100%);
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.hero button {
+  background-color: var(--accent);
+  border: none;
+  padding: 14px 36px;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background-color: #ff5b2e;
+}
+
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 100px 80px;
+  background-color: #0e234f;
+}
+
+#about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+#about img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+#about button {
+  background-color: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 10px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#about button:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+#menu {
+  text-align: center;
+  padding: 100px 80px;
+  background-color: #091b39;
+}
