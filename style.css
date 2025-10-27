@@ -7,6 +7,10 @@
   font-family: "Montserrat", Arial, sans-serif;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: #f4f6f8;
   color: #222;
@@ -19,23 +23,28 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 1.25rem 3.75rem;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 header .logo {
-  font-size: 28px;
-  letter-spacing: 2px;
+  font-size: 1.75rem;
+  letter-spacing: 0.125rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 25px;
   font-weight: 500;
   transition: color 0.3s;
+  font-size: 1rem;
 }
 
 nav a:hover {
@@ -43,27 +52,33 @@ nav a:hover {
 }
 
 main {
-  padding: 40px 80px;
+  padding: 2.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .hero {
   background: url("https://images.unsplash.com/photo-1543779287-2f57e44e1a2b?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
   color: white;
-  padding: 120px 60px;
+  padding: 7.5rem 3.75rem;
   text-align: center;
-  border-radius: 15px;
-  margin-bottom: 60px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero p {
-  font-size: 20px;
-  max-width: 600px;
-  margin: 0 auto 30px;
+  font-size: 1.25rem;
+  max-width: 37.5rem;
+  margin-bottom: 2rem;
 }
 
 .btn {
@@ -71,99 +86,119 @@ main {
   background-color: #046b99;
   color: #fff;
   text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 8px;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
 .btn:hover {
   background-color: #0589c9;
-  transform: translateY(-3px);
+  transform: translateY(-0.2rem);
 }
 
 .btn-container {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .about {
   background-color: #e0f7fa;
-  padding: 50px;
-  border-radius: 15px;
-  margin-bottom: 60px;
+  padding: 3rem;
+  border-radius: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .about h2 {
-  margin-bottom: 20px;
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .about img {
-  margin: 25px 0;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   max-width: 100%;
   height: auto;
 }
 
 .menu {
   background-color: #fff;
-  border-radius: 15px;
-  padding: 50px;
-  margin-bottom: 60px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
 }
 
 .menu h2 {
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 32px;
+  font-size: 2rem;
+}
+
+.menu .dish-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .dish {
   background-color: #f1f8ff;
-  border-radius: 12px;
-  padding: 25px;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
   text-align: center;
+  flex: 1 1 18rem;
+  max-width: 20rem;
 }
 
 .dish h3 {
-  margin-bottom: 15px;
-  font-size: 26px;
+  margin-bottom: 0.75rem;
+  font-size: 1.625rem;
   color: #033e5f;
 }
 
 .dish p {
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .price {
   font-weight: bold;
   color: #0277bd;
+  font-size: 1.125rem;
 }
 
 .contacts {
   background-color: #f9fafb;
-  border-radius: 15px;
-  padding: 50px;
+  border-radius: 1rem;
+  padding: 3rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
 }
 
 .contacts h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .contacts p {
-  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 footer {
   background-color: #012e40;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
-  border-top: 2px solid #046b99;
-  margin-top: 60px;
+  padding: 1.25rem 0;
+  border-top: 0.125rem solid #046b99;
+  margin-top: 3.75rem;
+  font-size: 0.875rem;
 }
