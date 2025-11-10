@@ -4,83 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AQUARIM — Рыбный ресторан</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container header-container">
+  <header class="header">
+    <div class="container">
       <h1 class="logo">AQUARIM</h1>
-      <nav>
-        <a href="#about">О ресторане</a>
-        <a href="#menu">Меню</a>
-        <a href="#delivery">Доставка и оплата</a>
-        <a href="#contacts">Контакты</a>
+      <nav class="nav">
+        <a href="#">О ресторане</a>
+        <a href="#">Меню</a>
+        <a href="#">Доставка и оплата</a>
+        <a href="#">Контакты</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Рыбный ресторан</h2>
-        <p>Откройте для себя мир изысканных вкусов с нашими рыбными деликатесами.</p>
-        <a href="#menu" class="btn accent">Меню</a>
-      </div>
-    </section>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>РЫБНЫЙ РЕСТОРАН</h2>
+      <p>Откройте для себя мир изысканных вкусов с нашими деликатесами, приготовленными специально для вас.</p>
+      <a href="#" class="btn">Меню</a>
+    </div>
+  </section>
 
-    <section class="about" id="about">
-      <div class="container about-container">
-        <div class="about-text">
-          <h2>История рыбного искушения</h2>
-          <p>Наша история началась с мечты о создании места, где каждый может насладиться свежей рыбой прямо у себя дома. Мы бережно сохраняем традиции, добавляя современные акценты к каждому блюду.</p>
-          <a href="#menu" class="btn">Узнать больше</a>
-        </div>
-        <div class="about-img">
-          <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=700&q=80" alt="Шеф-повар">
-        </div>
-      </div>
-    </section>
-
-    <section class="menu" id="menu">
-      <div class="container">
-        <h2>Блюда, которые запомнятся вам</h2>
-        <div class="menu-list">
-          <div class="dish">
-            <h3>Морской бриз</h3>
-            <p>Тарелка морепродуктов: краб, креветки, мидии и соус с зеленью.</p>
-            <span class="price">1300 ₽</span>
-            <a href="#" class="btn accent">В корзину</a>
-          </div>
-          <div class="dish">
-            <h3>Лосось с лимоном</h3>
-            <p>Нежный стейк из лосося с лимонным соусом и травами.</p>
-            <span class="price">950 ₽</span>
-            <a href="#" class="btn accent">В корзину</a>
-          </div>
-          <div class="dish">
-            <h3>Мидии по-морски</h3>
-            <p>Свежие мидии в сливочно-чесночном соусе с белым вином.</p>
-            <span class="price">870 ₽</span>
-            <a href="#" class="btn accent">В корзину</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contacts" id="contacts">
-      <div class="container">
-        <h2>Контакты</h2>
-        <p>Телефон: +7 (955) 478-89-76</p>
-        <p>Email: aquarim@gmail.com</p>
-        <p>Адрес: Москва, ул. Тверская, д.8</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+  <section class="about">
     <div class="container">
-      <p>© 2018–2025 AQUARIM</p>
+      <div class="text">
+        <h2>ИСТОРИЯ РЫБНОГО ИСКУШЕНИЯ</h2>
+        <p>
+          Мы создали место, где можно насладиться свежей рыбой прямо из аквариума.  
+          Каждая деталь в нашем ресторане продумана — от вкуса блюд до атмосферы подводного мира.
+        </p>
+        <a href="#" class="link">Узнать больше</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754" alt="Шеф повар">
+    </div>
+  </section>
+
+  <section class="menu">
+    <div class="container">
+      <h2>БЛЮДА, КОТОРЫЕ НАВСЕГДА ЗАПОМНЯТСЯ ВАМ</h2>
+      <div class="dish">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Морепродукты">
+        <div class="dish-info">
+          <h3>МОРСКОЙ БРИЗ</h3>
+          <p>Тарелка морепродуктов: креветки, краб, мидии и нежные травы под фирменным соусом.</p>
+          <p class="price">1300 ₽</p>
+          <a href="#" class="btn">В корзину</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 AQUARIM — Все права защищены</p>
+      <p>Политика обработки персональных данных</p>
     </div>
   </footer>
 </body>
