@@ -109,8 +109,6 @@ nav a:hover {
 }
 
 
-
-/* FLEX контейнер для лево–право */
 .hero-flex {
     display: flex;
     justify-content: space-between;
@@ -119,19 +117,16 @@ nav a:hover {
     z-index: 2;
 }
 
-/* Левая колонка */
 .left {
     width: 40%;
     text-align: left;
 }
 
-/* Правая колонка */
 .right {
     width: 40%;
     text-align: right;
 }
 
-/* Креветка по центру */
 .fork {
     position: absolute;
     top: 160px;
@@ -145,7 +140,9 @@ html {
     scroll-behavior: smooth;
 }
 
+
 /* Сеция "о ресторане" */
+
 
 .restaurant {
     padding-top: 250px;
@@ -181,13 +178,11 @@ html {
     margin: 0;
 }
 
-/* Параграфы */
 .restaurant-left p {
     margin: 20px 0 0 0;
     line-height: 1.5;
 }
 
-/* Кнопка */
 .restaurant-left .btn {
     margin-top: 20px;
     padding: 15px 70px;
@@ -204,19 +199,18 @@ html {
     transform: scale(1.1);
 }
 
-/* Правый блок с картинкой */
 .restaurant-right {
     width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    position: relative; /* чтобы можно было сдвинуть картинку */
+    position: relative;/
 }
 
-/* Смещаем картинку вниз, чтобы она была на уровне первого <p> */
 .cook-img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-top: 240px; /* регулируем по вкусу, чтобы выровнять с <p> */
+    margin-top: 240px;
+
 }
