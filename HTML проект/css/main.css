@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/trial-oceanic');
+
+
+html {
+    scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -6,7 +11,7 @@
 }
 
 body {
-    font-family: 'Oceanic TRIAL';
+    font-family: 'trial-oceanic';
     font-weight: 400;
     color: #fff;
     font-size: 16px;
@@ -20,12 +25,41 @@ img {
     max-width: 100%;
 }
 
-
 .wrapper {
+    position: relative;
+    overflow: hidden;
     background: #011845;
-    background: linear-gradient(90deg, rgba(1, 24, 69, 1) 0%, rgba(73, 97, 146, 1) 50%, rgba(1, 24, 69, 1) 100%);
-    width: 100%;
 }
+
+.glow-center::before {
+    content: "";
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.35) 0%,
+        rgba(255, 255, 255, 0.12) 40%,
+        rgba(255, 255, 255, 0) 70%
+    );
+
+    filter: blur(120px);
+    opacity: 0.75;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.wrapper > * {
+    position: relative;
+    z-index: 2;
+}
+
+
 
 .container {
     width: 1400px;
@@ -41,15 +75,41 @@ header .AQUARIM {
     font-size: 28px;
 }
 
+/* Стили для корзины */
+.cart-link {
+    position: fixed;
+    top: 20px; 
+    right: 20px;
+    display: flex;   /* Используем flexbox для выравнивания элементов */
+}
+
+.cart-icon {
+    width: 33.3px;
+    height: 27px;
+    cursor: pointer; /* Указатель мыши в виде руки */
+    align-items: center; /* Центрируем элементы по вертикали */
+    justify-content: center;
+}
+
+/* меню*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 header nav {
-    float: right;
-    width: 50%;
+    flex: 1;
+    display: flex;
+    justify-content: center; 
 }
 
 header nav ul {
-    list-style: none;
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-between; 
+    list-style: none;
+    max-width: 600px; 
 }
 
 header nav ul li{
@@ -74,7 +134,6 @@ nav a:hover {
 }
 
 .hero--info {
-    width: 1210;
     padding-top: 10px;
 }
 
@@ -91,7 +150,7 @@ nav a:hover {
 .hero--info p {
     font-weight: 500;
     line-height: 170%;
-    margin: 30px 0;
+    margin: 35px 0;
 }
 
 .hero--info .btn {
@@ -108,47 +167,116 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-
+/* ==== HERO FLEX: центрируем пару колонок и даём фиксированный gap ==== */
 .hero-flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; 
     align-items: flex-start;
+    gap: 425px;              /* расстояние между левым и правым блоком */
     position: relative;
     z-index: 2;
 }
 
+/* Левая колонка (РЫБНЫЙ) */
 .left {
     width: 40%;
+    max-width: 520px;
     text-align: left;
 }
 
+/* Правая колонка (РЕСТОРАН)*/
 .right {
-    width: 40%;
-    text-align: right;
+    width: 35%;
+    max-width: 420px;
+    text-align: left;  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;  
+    margin: 0; 
 }
 
+
+.right h2 {
+    margin: 0 0 6px 0; 
+    line-height: 1;
+}
+
+
+.right p {
+    display: flex;
+    align-items: center; 
+    gap: 14px; 
+    margin: 8px 0;
+    color: #dfe9ff;
+    line-height: 1.45;
+    max-width: 100%;
+}
+
+
+.right p img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+
+/* Креветка по центру */
 .fork {
     position: absolute;
-    top: 160px;
-    left: 45%;
+    top: 70px;
+    left: 47%;
     transform: translateX(-50%);
     z-index: 3;
     width: 220px;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-
 /* Сеция "о ресторане" */
 
-
 .restaurant {
-    padding-top: 250px;
+    margin-top: 50px; /* или больше/меньше под свой вкус */
+}
+
+.restaurant-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #011845; /* тот же фон, что и у первого экрана */
+    width: 100%;
+}
+
+.glow-left::before {
+    content: "";
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+
+    top: 50%;
+    left: -40%; /* уводим источник за пределы экрана */
+    transform: translateY(-50%);
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.35) 0%,
+        rgba(255, 255, 255, 0.12) 35%,
+        rgba(255, 255, 255, 0) 75%
+    );
+
+    filter: blur(130px);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+
+.restaurant-wrapper > * {
+    position: relative;
+    z-index: 2;
 }
 
 .restaurant {
+
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -164,12 +292,20 @@ html {
 .restaurant-header {
     display: flex;
     align-items: flex-start; /* Выравнивание по верхнему краю */
-    gap: 200px; /* Отступ между h3 и h4 */
+    gap: 50px; /* Отступ между h3 и h4 */
+}
+
+.spacer {
+    width: 0px; /* Настроить ширину для отступа */
+    height: 1px;
+    background-color: transparent;
 }
 
 .restaurant-left h3 {
+    white-space: nowrap;
     font-size: 17px;
     margin: 0;
+    line-height: 2;
 }
 
 .restaurant-left .title {
@@ -178,11 +314,17 @@ html {
     margin: 0;
 }
 
+.title span {
+    display: block;
+}
+
+/* Параграфы */
 .restaurant-left p {
     margin: 20px 0 0 0;
     line-height: 1.5;
 }
 
+/* Кнопка */
 .restaurant-left .btn {
     margin-top: 20px;
     padding: 15px 70px;
@@ -199,18 +341,19 @@ html {
     transform: scale(1.1);
 }
 
+/* Правый блок с картинкой */
 .restaurant-right {
     width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    position: relative;/
+    position: relative; /* чтобы можно было сдвинуть картинку */
 }
 
+/* Смещаем картинку вниз, чтобы она была на уровне первого <p> */
 .cook-img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-top: 240px;
-
+    margin-top: 240px; /* регулируем по вкусу, чтобы выровнять с <p> */
 }
