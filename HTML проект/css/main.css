@@ -1,4 +1,33 @@
-@import url('https://fonts.cdnfonts.com/css/trial-oceanic');
+@font-face {
+    font-family: "Oceanic";
+    src: url("../fonts/TRIAL_Oceanic-Regular-BF6487cfe600a81.otf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Oceanic";
+    src: url("../fonts/TRIAL_OceanicText-Medium-BF6487cfe5dde8c.otf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Oceanic";
+    src: url("../fonts/TRIAL_OceanicText-Bold-BF6487cfe5d76e7.otf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/gilroy-regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
 
 
 html {
@@ -8,14 +37,31 @@ html {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+
+html{
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #011845;
+    margin-bottom: 1000px;
+}
+
+
 body {
-    font-family: 'trial-oceanic';
+    font-family: "Gilroy", sans-serif;
     font-weight: 400;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
+    padding: 0 20px;
 }
+
+p{
+    font-size: 18px;
+    font-family: "Gilroy", sans-serif
+}
+
 
 a {
     text-decoration: none;
@@ -25,55 +71,66 @@ img {
     max-width: 100%;
 }
 
-.wrapper {
+.container{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+
+.container > * {
     position: relative;
-    overflow: hidden;
-    background: #011845;
+    z-index: 2;
+}
+
+/* ==== ЦЕНТРАЛЬНОЕ СВЕЧЕНИЕ ==== */
+.glow-center {
+    position: relative;
 }
 
 .glow-center::before {
     content: "";
     position: absolute;
-    width: 1200px;
-    height: 1200px;
-
-    top: 25%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 900px;
 
+    transform: translate(-50%, -50%);
     background: radial-gradient(
         circle,
-        rgba(255, 255, 255, 0.35) 0%,
-        rgba(255, 255, 255, 0.12) 40%,
-        rgba(255, 255, 255, 0) 70%
+        rgba(255, 255, 255, 0.28) 0%,
+        rgba(255, 255, 255, 0.12) 35%,
+        rgba(255, 255, 255, 0) 75%
     );
 
     filter: blur(120px);
-    opacity: 0.75;
+    opacity: 0.65;
+
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
-.wrapper > * {
+/* чтобы контент был выше свечения */
+.glow-center > * {
     position: relative;
     z-index: 2;
 }
 
 
 
-.container {
-    width: 1400px;
-    margin: 0 auto;
-}
+
 
 header {
     padding: 50px 0;
 }
 
 header .AQUARIM {
+    font-family: "Oceanic";
+    font-weight: 400;
     text-transform: uppercase;
     font-size: 28px;
 }
+
 
 /* Стили для корзины */
 .cart-link {
@@ -93,6 +150,8 @@ header .AQUARIM {
 
 /* меню*/
 header {
+    font-family: "Gilroy";
+    font-weight: 400;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -138,11 +197,21 @@ nav a:hover {
 }
 
 .hero--info h1 {
+    transform: translate (-50px);
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 300px;
+    line-height: 100%;
+    letter-spacing: 0;
+
+    text-transform: uppercase;
     color: #496192;
-    font-size: 280px;
 }
 
 .hero--info h2 {
+    font-family: "Oceanic", serif;
     font-size: 80px;
     font-weight: 390;
 }
@@ -154,6 +223,8 @@ nav a:hover {
 }
 
 .hero--info .btn {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
     background: #E9663D;
     color: #fff;
     padding: 15px 70px;
@@ -163,12 +234,15 @@ nav a:hover {
 }
 
 .hero--info .btn:hover {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
     cursor: pointer;
     transform: scale(1.1);
 }
 
 /* ==== HERO FLEX: центрируем пару колонок и даём фиксированный gap ==== */
 .hero-flex {
+    margin-top: 40px;
     display: flex;
     justify-content: center; 
     align-items: flex-start;
@@ -198,12 +272,15 @@ nav a:hover {
 
 
 .right h2 {
+    font-family: "Oceanic", serif;
     margin: 0 0 6px 0; 
     line-height: 1;
 }
 
 
 .right p {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 400;
     display: flex;
     align-items: center; 
     gap: 14px; 
@@ -226,134 +303,313 @@ nav a:hover {
 /* Креветка по центру */
 .fork {
     position: absolute;
-    top: 70px;
+    top: 100px;
     left: 47%;
     transform: translateX(-50%);
     z-index: 3;
     width: 220px;
 }
 
+
 /* Сеция "о ресторане" */
 
-.restaurant {
-    margin-top: 50px; /* или больше/меньше под свой вкус */
+.glow-effect {
+    position: relative;
+    overflow: visible; /* Важно: меняем с hidden на visible */
 }
 
-.restaurant-wrapper {
+/* Вариант: свечение слева с плавным переходом */
+.glow-left {
     position: relative;
-    overflow: hidden;
-    background: #011845; /* тот же фон, что и у первого экрана */
-    width: 100%;
+    z-index: 1;
 }
 
 .glow-left::before {
     content: "";
     position: absolute;
-    width: 1000px;
-    height: 1000px;
-
     top: 50%;
-    left: -40%; /* уводим источник за пределы экрана */
+    left: -350px; /* сдвигаем свечение влево за пределы экрана */
     transform: translateY(-50%);
+
+    width: 900px;
+    height: 900px;
+
     background: radial-gradient(
         circle,
-        rgba(255, 255, 255, 0.35) 0%,
-        rgba(255, 255, 255, 0.12) 35%,
-        rgba(255, 255, 255, 0) 75%
+        rgba(255, 255, 255, 0.28) 0%,
+        rgba(255, 255, 255, 0.1) 35%,
+        rgba(255, 255, 255, 0) 80%
     );
 
-    filter: blur(130px);
-    opacity: 0.7;
+    filter: blur(160px);
+    opacity: 0.8;
+
+    z-index: -1;
     pointer-events: none;
-    z-index: 1;
 }
 
 
-
-.restaurant-wrapper > * {
-    position: relative;
-    z-index: 2;
+.about {
+    margin-top: 200px; /* можешь поставить любое значение */
 }
 
-.restaurant {
-
+.container1 {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 80px 0;
-    gap: 40px;
+    gap: 250px;
 }
 
-.restaurant-left {
-    width: 50%;
+
+.container1{
+    justify-content: space-evenly;
 }
 
-/* Flex для заголовков, чтобы h3 и h4 стояли на одном уровне */
-.restaurant-header {
-    display: flex;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
-    gap: 50px; /* Отступ между h3 и h4 */
+.about__middle {
+    margin-left: 250px;
 }
 
-.spacer {
-    width: 0px; /* Настроить ширину для отступа */
-    height: 1px;
-    background-color: transparent;
+
+.about__title--word{
+    width: 1200px;
 }
 
-.restaurant-left h3 {
-    white-space: nowrap;
-    font-size: 17px;
-    margin: 0;
-    line-height: 2;
+.about__title h2{
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 12px;
+    transform: translateY(20px);
 }
 
-.restaurant-left .title {
-    font-size: 82px;
-    line-height: 1.3;
-    margin: 0;
+.about__title p{
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 56px;
 }
 
-.title span {
-    display: block;
+.about__text {
+    margin-top: 40px;
+    font-family: "Gilroy";
+    font-weight: 400;
 }
 
-/* Параграфы */
-.restaurant-left p {
-    margin: 20px 0 0 0;
-    line-height: 1.5;
+
+.about__text p{
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    height: 195px;
+    width: 488px;
 }
 
-/* Кнопка */
-.restaurant-left .btn {
-    margin-top: 20px;
-    padding: 15px 70px;
+.about img{
+    width: 590px;
+    height: 374px;
+}
+
+
+
+.about .btn {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
     background: #011845;
+    padding: 15px 70px;
     color: #fff;
     border: 2px solid #fff;
     transition: all 500ms ease;
     font-size: 24px;
+    position: relative;
+    bottom: 70px;
     
 }
 
-.restaurant-left .btn:hover {
+.about .btn:hover {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
     cursor: pointer;
     transform: scale(1.1);
 }
 
-/* Правый блок с картинкой */
-.restaurant-right {
-    width: 50%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: relative; /* чтобы можно было сдвинуть картинку */
+
+
+
+/* СЕКЦИЯ МЕНЮ */
+
+.menu-section
+{
+    margin-top: 150px; /* можешь поставить любое значение */
 }
 
-/* Смещаем картинку вниз, чтобы она была на уровне первого <p> */
-.cook-img {
-    max-width: 100%;
-    height: auto;
+.menu-title {
+    margin-bottom: 60px; /* или любое другое значение */
+}
+
+.menu-title h2 {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 15px;
+    transform: translateY(20px);
+}
+
+.menu-title p{
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 56px;
+}
+
+.menu_middle {
+    margin-left: 250px; 
+}
+
+
+.menu_middle_2 {
+    width: 1200px;
+}
+
+
+
+
+.menu-slider {
+    width: 1200px;
+    height: 391px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background:linear-gradient(90deg,rgba(73, 97, 146, 1) 0%);
+    display: flex;
+    padding: 80px;
+    justify-content: space-between;
+    overflow: visible;
+}
+
+
+.menu-image {
+    position: relative;
+}
+
+.menu-image img {
+    transform: translateY(-120px); 
+}
+
+
+
+/* Левая часть */
+.menu-card {
+    width: 45%;
+    position: relative;
+}
+
+.menu-card h3 {
+    transform: translateY(-20px);
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 36px;
+    width: 298px;
+    height: 43px;
     display: block;
-    margin-top: 240px; /* регулируем по вкусу, чтобы выровнять с <p> */
+    overflow: hidden
+    
+}
+
+.menu-description {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.menu-price {
+    font-family: "Gilroy";
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.grams {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.menu-btn {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    background: #E9663D;
+    color: #fff;
+    padding: 15px 70px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 24px;
+}
+
+.menu-btn:hover {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+/* Стрелки */
+.arrow-left, .arrow-right {
+    width: 21px;
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+}
+
+.arrow-left {
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-image {
+    width: 50%;
+    position: relative;
+}
+
+.menu-image img {
+    width: 480px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.arrow-right {
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Кнопка внизу */
+.menu-bottom {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.menu-bottom-btn {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    padding: 12px 36px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    transition: all 500ms ease;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.menu-bottom :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* СЕКЦИЯ ДОСТАВКА */
+.delivery {
+margin-top: 200px; /* можешь поставить любое значение */
 }
