@@ -55,7 +55,14 @@ body {
     color: #fff;
     font-size: 18px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
 }
+
+html, body {
+    height: 100%;
+}
+
 
 p{
     font-size: 18px;
@@ -98,7 +105,7 @@ img {
     transform: translate(-50%, -50%);
     background: radial-gradient(
         circle,
-        rgba(255, 255, 255, 0.28) 0%,
+        rgba(255, 255, 255, 0.28) 40%,
         rgba(255, 255, 255, 0.12) 35%,
         rgba(255, 255, 255, 0) 75%
     );
@@ -208,6 +215,7 @@ nav a:hover {
 
     text-transform: uppercase;
     color: #496192;
+    opacity:  0.90;
 }
 
 .hero--info h2 {
@@ -235,7 +243,7 @@ nav a:hover {
 
 .hero--info .btn:hover {
     font-family: "Gilroy", sans-serif;
-    font-weight: 500;
+    font-weight: 550;
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -246,7 +254,7 @@ nav a:hover {
     display: flex;
     justify-content: center; 
     align-items: flex-start;
-    gap: 425px;              /* расстояние между левым и правым блоком */
+    gap: 470px;              /* расстояние между левым и правым блоком */
     position: relative;
     z-index: 2;
 }
@@ -254,15 +262,19 @@ nav a:hover {
 /* Левая колонка (РЫБНЫЙ) */
 .left {
     width: 40%;
-    max-width: 520px;
+    max-width: 500px;
     text-align: left;
+}
+
+.left p {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 400;
 }
 
 /* Правая колонка (РЕСТОРАН)*/
 .right {
-    width: 35%;
-    max-width: 420px;
-    text-align: left;  
+    max-width: 1200px;
+    text-align: right;  
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -273,8 +285,11 @@ nav a:hover {
 
 .right h2 {
     font-family: "Oceanic", serif;
-    margin: 0 0 6px 0; 
+    font-size: 80px;
+    font-weight: 390;
+    margin: 0 0 6px 0;  
     line-height: 1;
+    margin-left: -65px;
 }
 
 
@@ -285,17 +300,17 @@ nav a:hover {
     align-items: center; 
     gap: 14px; 
     margin: 8px 0;
-    color: #dfe9ff;
-    line-height: 1.45;
     max-width: 100%;
+
 }
 
 
 .right p img {
-    width: 28px;
-    height: 28px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
     flex-shrink: 0;
+
 }
 
 
@@ -303,12 +318,17 @@ nav a:hover {
 /* Креветка по центру */
 .fork {
     position: absolute;
-    top: 100px;
-    left: 47%;
+    top: 60px;
+    left: 50%;
     transform: translateX(-50%);
+    width: 240px;
     z-index: 3;
-    width: 220px;
 }
+
+
+
+
+
 
 
 /* Сеция "о ресторане" */
@@ -393,7 +413,6 @@ nav a:hover {
 
 
 .about__text p{
-    font-family: "Oceanic", serif;
     font-weight: 400;
     height: 195px;
     width: 488px;
@@ -455,7 +474,7 @@ nav a:hover {
 }
 
 .menu_middle {
-    margin-left: 250px; 
+    margin-left: 170px; 
 }
 
 
@@ -466,15 +485,13 @@ nav a:hover {
 
 
 
-.menu-slider {
-    width: 1200px;
+.menu-slider {  
     height: 391px;
     box-sizing: border-box;
     margin: 0 auto;
     background:linear-gradient(90deg,rgba(73, 97, 146, 1) 0%);
     display: flex;
-    padding: 80px;
-    justify-content: space-between;
+    padding: 60px 100px;
     overflow: visible;
 }
 
@@ -484,7 +501,9 @@ nav a:hover {
 }
 
 .menu-image img {
-    transform: translateY(-120px); 
+    
+    transform: translate(100px, -100px);
+    font-size: 480px; 
 }
 
 
@@ -493,11 +512,13 @@ nav a:hover {
 .menu-card {
     width: 45%;
     position: relative;
+
+
 }
 
 .menu-card h3 {
     transform: translateY(-20px);
-    font-family: "Gilroy";
+    font-family: "Oceanic", serif;
     font-weight: 400;
     font-size: 36px;
     width: 298px;
@@ -519,7 +540,7 @@ nav a:hover {
     font-family: "Gilroy";
     font-weight: 400;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;;
     font-size: 18px;
     margin-bottom: 30px;
 }
@@ -528,6 +549,7 @@ nav a:hover {
     font-family: "Gilroy";
     font-weight: 400;
     font-size: 12px;
+    margin-left: 300px;
 }
 
 .menu-btn {
@@ -563,7 +585,7 @@ nav a:hover {
 
 .arrow-left {
     position: absolute;
-    left: -35px;
+    left: -70px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -581,7 +603,7 @@ nav a:hover {
 
 .arrow-right {
     position: absolute;
-    right: -35px;
+    right: -70px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -610,6 +632,723 @@ nav a:hover {
 }
 
 /* СЕКЦИЯ ДОСТАВКА */
-.delivery {
-margin-top: 200px; /* можешь поставить любое значение */
+
+.delivery-section {
+margin-top: 200px; 
 }
+
+.delivery-section {
+    position: relative;
+    z-index: 1;
+}
+
+.delivery-section::before {
+    content: "";
+    position: absolute;
+    
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* центрирование */
+
+    width: 900px;
+    height: 900px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.1) 40%,
+        rgba(255, 255, 255, 0) 80%
+    );
+
+    filter: blur(160px);
+    opacity: 0.75;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+.delivery-title {
+    margin-bottom: 60px;
+}
+
+.delivery-title h2{
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 15px;
+    transform: translateY(20px);
+}
+
+.delivery-title p {
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 56px;
+}
+
+.delivery_big{
+    margin-left: 130px; 
+}
+
+/* Контент: 3 колонки */
+.delivery__content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+
+.delivery__item:not(:last-child) {
+    margin-bottom: 45px;
+}
+
+.delivery__number {
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 36px;
+    margin-bottom: 10px;
+    display: block;
+    opacity: 0.9;
+}
+
+.delivery__right {
+    margin-left: -65px;
+}
+
+.delivery__subtitle {
+    font-family: "Oceanic", serif;
+    font-weight: 400;;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.delivery__text {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 400;
+    font-size: 18px;   
+    margin-top: -10px;
+}
+
+/* Фото в центре */
+.delivery__image img {
+    width: 100%;
+    max-width: 420px;
+    transform: translateX(-50px);
+
+}
+
+/* СЕКЦИЯ ОТЗЫВЫ*/
+
+.reviews-section
+{
+    margin-top: 200px; /* можешь поставить любое значение */
+}
+
+.reviews-title {
+    margin-bottom: 40px;
+}
+
+.reviews-title h2 {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 15px;
+    transform: translateY(20px);
+}
+
+.reviews_IDW {
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 56px;
+    text-transform: uppercase;
+    margin-left: 150px; 
+}
+
+.reviews_IDW_2 {
+   font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 56px;
+    text-transform: uppercase;
+
+}
+
+.reviews__subtitle {
+    text-align: center;
+    transform: translateX(-85px);
+    font-size: 18px;
+}
+
+
+/* Стрелки на одной линии */
+.reviews-arrows {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 60px;
+    margin-top: -20px;
+    margin-right: 180px;
+}
+
+.reviews-gallery {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 60px
+     
+}
+
+.reviews-section {
+    position: relative;
+    z-index: 1;
+}
+
+.reviews-section::before {
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: -380px;
+    transform: translateY(-50%);
+
+    width: 900px;
+    height: 900px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.28) 0%,
+        rgba(255, 255, 255, 0.10) 35%,
+        rgba(255, 255, 255, 0) 80%
+    );
+
+    filter: blur(160px);
+    opacity: 0.8;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* СЕКЦИЯ АКЦИИ*/
+
+.sale {
+   margin-top: 150px; 
+}
+
+.sale-title {
+    margin-bottom: 60px; 
+}
+
+.sale-title h2 {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 15px;
+    transform: translateY(20px);
+}
+
+.sale-title p{
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 56px;
+}
+
+.sale-middle {
+    margin-left: 170px; 
+}
+
+
+.sale-middle_2 {
+    width: 1200px;
+}
+
+
+.sale__slider {  
+    height: 391px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background:linear-gradient(90deg,rgba(73, 97, 146, 1) 0%);
+    display: flex;
+    padding: 60px 100px;
+    overflow: visible;
+}
+
+
+.sale__image {
+    position: relative;
+}
+
+.sale__image img {
+    
+    transform: translate(100px, -100px);
+    font-size: 480px; 
+}
+
+.sale__content {
+    width: 45%;
+    position: relative;
+
+
+}
+
+.sale-move {
+    transform: translateY(-20px);
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 36px;
+    width: 298px;
+    height: 43px;
+   
+    
+}
+
+.sale-move_2 {
+    transform: translateY(-20px);
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 36px;
+    width: 350px;
+    height: 43px;
+    
+}
+
+
+.sale__text {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.sale__btn {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    background: #E9663D;
+    color: #fff;
+    padding: 20px 45px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 18px;
+}
+
+.sale__btn:hover {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+
+.sale-arrow-left, .sale-arrow-right {
+    width: 21px;
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+}
+
+.sale-arrow-left {
+    position: absolute;
+    left: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sale__image {
+    width: 50%;
+    position: relative;
+}
+
+.menu-image img {
+    width: 480px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.sale-arrow-right {
+    position: absolute;
+    right: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+/* СЕКЦИЯ БРОНЬ*/
+.booking {
+    margin-top: 150px;
+}
+
+.booking-title {
+    margin-bottom: 70px; 
+}
+
+.booking-title h2 {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 15px;
+    transform: translateY(20px);
+}
+
+.booking-title p{
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 56px;
+    text-transform: uppercase;
+}
+
+.booking-middle {
+    margin-left: 160px; 
+}
+
+
+.booking-middle_2 {
+    width: 1200px;
+}
+
+.booking-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Форма слева */
+.booking-form {
+    width: 590px;
+    height: 436px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Картинка справа */
+.booking-image img {
+    width: 550px;
+    height: 470px;
+    transform: translateX(-165px);      
+}
+
+/* ===== СТИЛИ ДЛЯ ФОРМЫ ===== */
+.form-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group.full {
+    width: 100%;
+}
+
+/* Лейблы */
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Поля input */
+.booking-form input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* textarea */
+.booking-form textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+/* ===== КНОПКА ===== */
+.booking-btn {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    background: #E9663D;
+    color: #fff;
+    padding: 25px 207px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 24px;
+    margin-top: 18px;
+}
+
+.booking-btn:hover {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+
+
+/* СЕКЦИЯ КОНТАКТЫ*/
+.contacts {
+    margin-top: 260px;
+}
+
+.contacts-title {
+    margin-bottom: 70px; 
+}
+
+.contacts-title h2 {
+    font-family: "Gilroy";
+    font-weight: 400;
+    font-size: 15px;
+    transform: translateY(20px);
+}
+
+.contacts-title p{
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 56px;
+    text-transform: uppercase;
+}
+
+.contacts-middle {
+    margin-left: 125px; 
+}
+
+
+.contacts-middle_2 {
+    width: 1200px;
+}
+
+
+.contacts-title {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.contacts-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -500px; /* сдвигаем свечение влево за пределы экрана */
+    transform: translateY(-60%);
+    
+    width: 900px;
+    height: 900px;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.28) 0%,
+        rgba(255, 255, 255, 0.1) 35%,
+        rgba(255, 255, 255, 0) 80%
+    );
+
+    filter: blur(160px);
+    opacity: 0.6,5;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+
+.contacts-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 60px;
+}
+
+/* КАРТИНКА СЛЕВА */
+.contacts-img {
+    max-width: 100%;
+    margin-right: 150px;
+    margin-top: 10px;
+    flex-shrink: 0;
+}
+
+/* ПРАВАЯ КОЛОНКА */
+.contacts-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== ПОДЗАГОЛОВКИ ===== */
+
+.contacts-subtitle {
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 36px;
+    width: 415px;
+    margin-bottom: 10px;
+}
+
+/* отступ между логическими блоками */
+.contacts-subtitle:not(:first-child) {
+    margin-top: 30px;
+}
+
+/* ===== КОНТАКТНЫЕ ПУНКТЫ ===== */
+
+.contacts-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.contacts-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 16px;
+}
+
+.contacts-item p {
+    font-family: "Gilroy", sans-serif;
+    font-size: 18px;
+}
+
+/* ===== СОЦСЕТИ ===== */
+
+.contacts-socials {
+    display: flex;
+    margin-top: 10px;
+}
+
+.contacts-socials a {
+    margin-right: 15px;
+}
+
+.contacts-socials img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer; 
+}
+
+
+
+/* СЕКЦИЯ ФУТЕР*/
+.footer {
+    background-color: #3E5C91;
+    margin-top: 150px;
+    padding: 60px 0 40px;
+    width: 100%;
+    font-family: "Gilroy";
+    font-weight: 400;
+
+}
+
+/* Ограничение ширины */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+/* ---------- TOP ---------- */
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer__copyright {
+    font-size: 18px;
+}
+
+.footer__columns {
+    display: flex;
+    gap: 80px;
+}
+
+.footer__col h3 {
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.footer__col ul {
+    list-style: none;   
+}
+
+.footer__col li {
+    margin-bottom: 10px;
+}
+
+.footer__col a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.90;
+    transition: color 0.3s ease;
+}
+
+
+.footer__col a:hover {
+    color: #E9663D
+}
+
+/* ---------- MIDDLE ---------- */
+
+.footer__middle {
+    text-align: center;
+    margin: 30px 0 30px;
+    position: relative;
+}
+
+.footer__logo {
+    font-family: "Oceanic", serif;
+    font-weight: 400;
+    font-size: 220px;
+    color: rgba(0, 0, 0, 0.18);
+    line-height: 1;
+    user-select: none;
+}
+
+/* ---------- BOTTOM ---------- */
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.footer__bottom ul {
+    list-style: none; 
+}
+
+.footer__bottom  a{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 40px;
+    transition: color 0.3s ease;
+}
+
+.footer__bottom a:hover {
+    color: #E9663D
+}
+
+.footer__design {
+    white-space: nowrap;
+}
+
+
+
+
+
+
